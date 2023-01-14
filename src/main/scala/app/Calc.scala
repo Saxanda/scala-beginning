@@ -1,5 +1,7 @@
 package app
 
+import org.scalatest.Assertions.intercept
+
 object Calc {
 
   def add(a: Int, b: Int) = a + b
@@ -167,7 +169,7 @@ def main(args: Array[String]) = {
   val t6 = a.foldLeft(10)(_ * _)
   println(t6)*/
   ////////////////////////////////////////
-  val a = List(1, 3, 5, 7)
+ /* val a = List(1, 3, 5, 7)
   val t1 = 0::a
   println(t1)
   val head = List(1, 3)
@@ -179,7 +181,108 @@ def main(args: Array[String]) = {
   val b = 2 :: c
   val a1 = 1 :: b
   println(a1)
-  println(b.tail)
+  println(b.tail)*/
   ///////////////////////////////////
+/*  val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Michigan")
+  val aNewMap = myMap + ("IL" -> "Illinois")
+  println(aNewMap)
+  println(aNewMap.contains("IL"))*/
+  //////////////////////
+ /* val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Michigan")
+
+  val mapValues = myMap.values
+  println(mapValues)
+  println(mapValues.size)
+  println(mapValues.head)
+  println(mapValues.last)*/
+  //////////////////////////
+/* val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Meechigan")
+  val mapValues = myMap.values
+  println(myMap("MI"))*/
+  ////////////////
+/*  val myMap =
+    Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")
+  intercept[NoSuchElementException] {
+    myMap("TX")
   }
+  val t = myMap.getOrElse("TX", "missing data")
+  println(t)*/
+  /////////////////////////
+/*  val myMap =
+    Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")
+  val aNewMap = myMap - "MI"
+  val t =aNewMap.contains("MI")
+  println(t)*/
+  ////////////////////////////
+ /* val myMap =
+    Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")
+  val aNewMap = myMap - "MN"
+
+  val t = aNewMap.equals(myMap)
+  println(t)*/
+  /////////////////////////////////
+ /* val a = 'a'
+  val b = 'B'
+  val t1 = "%c".format(a)
+  val t2 = "%c".format(b)
+  println(t1)
+  println(t2)*/
+  //////////////////////////////
+  /*val j = 190
+  val k = "vodka"
+
+  val t1 = "%d bottles of %s on the wall".format(j - 100, k)
+  println(t1)*/
+  ////////////////////////
+ /* def goldilocks(expr: (String, String)) =
+    expr match {
+      case ("porridge", bear) =>
+        bear + " said someone's been eating my porridge"
+      case ("chair", bear) => bear + " said someone's been sitting in my chair"
+      case ("bed", bear) => bear + " said someone's been sleeping in my bed"
+      case _ => "what?"
+    }
+  val t1 = goldilocks(("porridge", "Papa"))
+  val t2 = goldilocks(("chair", "Mama"))
+  val t3 = goldilocks(("bed", "Masha"))
+  val t4 = goldilocks(( "Masha","bed"))
+  println(t1)
+  println(t2)
+  println(t3)
+  println(t4)*/
+  /////////////////////////////////////////
+
+  /*val foodItem = "porridge"
+
+  def goldilocks(expr: (String, String)) =
+    expr match {
+      case (`foodItem`, _) => "eating"
+      case ("chair", "Mama") => "sitting"
+      case ("bed", "Baby") => "sleeping"
+      case _ => "what?"
+    }
+  val t1 = goldilocks(("porridge", "Papa"))
+  println(t1)*/
+  //////////////////////////////////////
+ /* val secondElement = List(1, 2, 3, 33) match {
+    case x :: y :: xs => y
+    case _ => 0
+       }
+  val t1 = secondElement
+  println(t1)*/
+/////////////////////////////////////////
+/*val r = List(1, 2, 3) match {
+  case x :: y :: Nil => y // only matches a list with exactly two items
+  case _ => 0
+}
+  val t1 = r
+  println(t1)*/
+  ///////////////////////////////////////////////
+  val r = List(1, 2, 3) match {
+    case x :: y :: z :: tail => tail
+    case _ => 0
+  }
+
+  r == Nil
+}
 }
