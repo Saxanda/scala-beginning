@@ -75,7 +75,7 @@ def main(args: Array[String]) = {
   val result5 = lambda5(3)*/
 
   ////////////////////////////////////////
-/*  def addWithoutSyntaxSugar(x: Int): Function1[Int, Int] = {
+  /*  def addWithoutSyntaxSugar(x: Int): Function1[Int, Int] = {
     new Function1[Int, Int]() {
       def apply(y: Int): Int = x + y
     }
@@ -92,15 +92,15 @@ def main(args: Array[String]) = {
   //////////////////////////////////////////
   def addWithSyntaxSugar(x: Int) = (y: Int) => x + y
 
- /* val result1 = addWithSyntaxSugar(1).isInstanceOf[Function1[Int, Int]]
+  /* val result1 = addWithSyntaxSugar(1).isInstanceOf[Function1[Int, Int]]
   println(result1)
   val result2 = addWithSyntaxSugar(2)(3)
   println(result2)
   def fiveAdder = addWithSyntaxSugar(5)
   val result3 = fiveAdder(5)
   println(result3)*/
- //////////////////////////////////////////////
- /*def makeUpper(xs: List[String]) =
+  //////////////////////////////////////////////
+  /*def makeUpper(xs: List[String]) =
    xs map {
      _.toUpperCase
    }
@@ -120,12 +120,12 @@ def main(args: Array[String]) = {
   val result4 = List("Scala", "Erlang", "Clojure") map (_.length)
   println(result4)*/
   /////////////////////////////////////////
- /* val a = List(1, 2, 3)
+  /* val a = List(1, 2, 3)
   val b = List(1, 2, 3)
   val t = a eq b
   println(t)*/
-//////////////////////////////////
-/*  val a: List[String] = Nil
+  //////////////////////////////////
+  /*  val a: List[String] = Nil
   val b: List[Int] = Nil
   val t1 = (a == Nil)
   println(t1)
@@ -136,7 +136,7 @@ def main(args: Array[String]) = {
   println(t3)
   println(t4)*/
   //////////////////////////////////////
- /*val a = List(1, 3, 5, 7, 9)
+  /*val a = List(1, 3, 5, 7, 9)
 
   // get the length of the list
   val t1 = a.length
@@ -155,7 +155,7 @@ def main(args: Array[String]) = {
   }
   println(t4)*/
   ////////////////////////////////////////
- /* val a = List(1, 3, 5, 7)
+  /* val a = List(1, 3, 5, 7)
   val t1 = a.reduceLeft(_ + _)
   println(t1)
   val t2 = a.reduceLeft(_ * _)
@@ -169,7 +169,7 @@ def main(args: Array[String]) = {
   val t6 = a.foldLeft(10)(_ * _)
   println(t6)*/
   ////////////////////////////////////////
- /* val a = List(1, 3, 5, 7)
+  /* val a = List(1, 3, 5, 7)
   val t1 = 0::a
   println(t1)
   val head = List(1, 3)
@@ -183,12 +183,12 @@ def main(args: Array[String]) = {
   println(a1)
   println(b.tail)*/
   ///////////////////////////////////
-/*  val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Michigan")
+  /*  val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Michigan")
   val aNewMap = myMap + ("IL" -> "Illinois")
   println(aNewMap)
   println(aNewMap.contains("IL"))*/
   //////////////////////
- /* val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Michigan")
+  /* val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Michigan")
 
   val mapValues = myMap.values
   println(mapValues)
@@ -196,11 +196,11 @@ def main(args: Array[String]) = {
   println(mapValues.head)
   println(mapValues.last)*/
   //////////////////////////
-/* val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Meechigan")
+  /* val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "MI" -> "Meechigan")
   val mapValues = myMap.values
   println(myMap("MI"))*/
   ////////////////
-/*  val myMap =
+  /*  val myMap =
     Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")
   intercept[NoSuchElementException] {
     myMap("TX")
@@ -208,20 +208,20 @@ def main(args: Array[String]) = {
   val t = myMap.getOrElse("TX", "missing data")
   println(t)*/
   /////////////////////////
-/*  val myMap =
+  /*  val myMap =
     Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")
   val aNewMap = myMap - "MI"
   val t =aNewMap.contains("MI")
   println(t)*/
   ////////////////////////////
- /* val myMap =
+  /* val myMap =
     Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")
   val aNewMap = myMap - "MN"
 
   val t = aNewMap.equals(myMap)
   println(t)*/
   /////////////////////////////////
- /* val a = 'a'
+  /* val a = 'a'
   val b = 'B'
   val t1 = "%c".format(a)
   val t2 = "%c".format(b)
@@ -234,7 +234,7 @@ def main(args: Array[String]) = {
   val t1 = "%d bottles of %s on the wall".format(j - 100, k)
   println(t1)*/
   ////////////////////////
- /* def goldilocks(expr: (String, String)) =
+  /* def goldilocks(expr: (String, String)) =
     expr match {
       case ("porridge", bear) =>
         bear + " said someone's been eating my porridge"
@@ -264,25 +264,124 @@ def main(args: Array[String]) = {
   val t1 = goldilocks(("porridge", "Papa"))
   println(t1)*/
   //////////////////////////////////////
- /* val secondElement = List(1, 2, 3, 33) match {
+  /* val secondElement = List(1, 2, 3, 33) match {
     case x :: y :: xs => y
     case _ => 0
        }
   val t1 = secondElement
   println(t1)*/
-/////////////////////////////////////////
-/*val r = List(1, 2, 3) match {
+  /////////////////////////////////////////
+  /*val r = List(1, 2, 3) match {
   case x :: y :: Nil => y // only matches a list with exactly two items
   case _ => 0
 }
   val t1 = r
   println(t1)*/
   ///////////////////////////////////////////////
-  val r = List(1, 2, 3) match {
+  /*  val r = List(1, 2, 3) match {
     case x :: y :: z :: tail => tail
     case _ => 0
   }
 
-  r == Nil
+  r == Nil*/
+  ////////////////////////
+
+  /*  abstract class Term
+  case class Var(name: String) extends Term
+  case class Fun(arg: String, body: Term) extends Term
+  case class App(f: Term, v: Term) extends Term
+
+  Fun("x", Fun("y", App(Var("x"), Var("y"))))
+  val x = Var("x")
+  println(x.name)
+
+  val x1 = Var("x")
+  val x2 = Var("x")
+  val y1 = Var("y")
+  println("" + x1 + " == " + x2 + " => " + (x1 == x2))
+  println("" + x1 + " == " + y1 + " => " + (x1 == y1))*/
+  ///////////////////////////////////////////
+  /*  object TermTest extends Application {
+    def printTerm(term: Term) = {
+      term match {
+        case Var(n) =>
+          print(n)
+        case Fun(x, b) =>
+          print("^" + x + ".")
+          printTerm(b)
+        case App(f, v) =>
+          print("(")
+          printTerm(f)
+          print(" ")
+          printTerm(v)
+          print(")")
+      }
+    }
+
+    def isIdentityFun(term: Term): Boolean = term match {
+      case Fun(x, Var(y)) if x == y => true
+      case _ => false
+    }
+
+    val id = Fun("x", Var("x"))
+    val t = Fun("x", Fun("y", App(Var("x"), Var("y"))))
+    printTerm(t)
+    println
+    println(isIdentityFun(id))
+    println(isIdentityFun(t))
+  }*/
+
+  //////////////////////////////////////////
+  /*  case class Person(first: String, last: String)
+
+  val p1 = new Person("Fred", "Jones")
+  val p2 = new Person("Shaggy", "Rogers")
+  val p3 = new Person("Fred", "Jones")
+  val t1 = (p1 == p2)
+  val t2 = (p1 == p3)
+  val t3 = (p1 eq p2)
+  val t4 = (p1 eq p3)
+  println(t4) // pointed to the reference*/
+  //////////////////////////////////////////////
+  /* case class Person(first: String, last: String)
+
+  val p1 = new Person("Fred", "Jones")
+  val p2 = new Person("Shaggy", "Rogers")
+  val p3 = new Person("Fred", "Jones")
+  val t1 = (p1.hashCode == p2.hashCode)
+  val t2 = p1.hashCode
+  println(t1)
+  println(t2)*/
+  //////////////////////////////////
+  /*case class Dog(name: String, breed: String)
+  val d1 = Dog("Scooby", "Doberman")
+  val t1 = d1.toString
+  println(t1)*/
+
+  /////////////////
+/*  case class PersonCC(firstName: String, lastName: String)
+  val indy = PersonCC("Indiana", "Jones")
+
+  val t1 = indy.isInstanceOf[Serializable]
+  println(t1)
+  class Person(firstName: String, lastName: String)
+  val junior = new Person("Indiana", "Jones")
+
+
+  val t2 = junior.isInstanceOf[Serializable]
+  println(t2)*/
+  //////////////////////////////
+
+ /* val someNumbers = Range(0, 10)
+  val second = someNumbers(1)
+  val last = someNumbers.last
+
+  val t1 = someNumbers.size
+  println(t1)
+  val otherRange = 0 until 10
+  println(otherRange)*/
+  //////////////////////////////////
+  val someNumbers = Range(0, 34, 2)
+  print(someNumbers.contains(33))
 }
 }
