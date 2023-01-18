@@ -90,7 +90,7 @@ def main(args: Array[String]) = {
   println(result3)*/
 
   //////////////////////////////////////////
-  def addWithSyntaxSugar(x: Int) = (y: Int) => x + y
+ /* def addWithSyntaxSugar(x: Int) = (y: Int) => x + y*/
 
   /* val result1 = addWithSyntaxSugar(1).isInstanceOf[Function1[Int, Int]]
   println(result1)
@@ -381,7 +381,33 @@ def main(args: Array[String]) = {
   val otherRange = 0 until 10
   println(otherRange)*/
   //////////////////////////////////
-  val someNumbers = Range(0, 34, 2)
-  print(someNumbers.contains(33))
+/*  val someNumbers = Range(0, 34, 2)
+  print(someNumbers.contains(33))*/
+  //////////////////////
+  def multiply(x: Int, y: Int) = x * y
+
+  val t = (multiply _).isInstanceOf[Function2[_, _, _]]
+  println(t)
+  ////////////////////////////////
+  def customFilter(f: Int => Boolean)(xs: List[Int]) =
+    xs filter f
+
+  def onlyEven(x: Int) = x % 2 == 0
+
+  val xs = List(12, 11, 5, 20, 3, 13, 2)
+  val someNumbers =  customFilter(onlyEven)(xs)
+  println(someNumbers)
+  ////////////////////////////////////////////////
+/*  val doubleEvens: PartialFunction[Int, Int] = {
+    case x if (x % 2) == 0 => x * 2
+  }
+  val tripleOdds: PartialFunction[Int, Int] = {
+    case x if (x % 2) != 0 => x * 3
+  }
+
+  val whatToDo = doubleEvens orElse tripleOdds //Here we chain the partial functions together
+  whatToDo(3)*/
 }
 }
+
+
